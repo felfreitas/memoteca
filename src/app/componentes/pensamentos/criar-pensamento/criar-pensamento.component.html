@@ -22,7 +22,6 @@
       formControlName="autoria"
       placeholder="Digite a autoria ou fonte"
     >
-
     <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched">
       Autoria é Obrigatória!
     </div>
@@ -30,6 +29,7 @@
     <div class="mensagem__erro" *ngIf="formulario.get('autoria')?.errors?.['minlength']">
       Autoria precisa ter no mín 3 caracteres!
     </div>
+
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
@@ -100,6 +100,7 @@
     </div>
     <div class="acoes">
       <button [disabled]="!formulario.valid" [ngClass]="habilitarBotao()" (click)="criarPensamento()" >Salvar</button>
+      <button  (click)="criarPensamento()" >Salvar</button>
       <button (click)="cancelar()" class="botao">Cancelar</button>
     </div>
   </form>
